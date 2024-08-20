@@ -1,4 +1,4 @@
-module kbot
+module github.com/vitali-o/kbot
 
 go 1.20
 
