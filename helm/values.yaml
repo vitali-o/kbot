@@ -10,9 +10,9 @@ image:
   arch: amd64
 
 secret:
-  name: kbot
-  tokenKey: token
-  tokenName: TELE_TOKEN
+  name: "token"
+  tokenKey: "TELE_TOKEN"
+  tokenName: "kbot"
 
 dnsConfig:
   nameservers: 1.1.1.1
