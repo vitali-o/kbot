@@ -1,3 +1,10 @@
+##### To install kbot with helm:
+* Prerequestions:
+  * Create kubernetes secret with command:
+  ```
+  kubectl create secret generic token --from-literal=TELE_TOKEN={{my_telegram_tokne}}
+  ```
+* Run helm install kbot CHART_URL where CHART_URL is link to helm package on release page of this repo.
 
 ##### How to build your own docker images with binary for different OS and architectures:  
 
