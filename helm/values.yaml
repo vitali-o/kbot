@@ -3,16 +3,13 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   repository: vitaliio
-  tag: "v1.0.6-c42268b"
+  tag: "v1.0.7-452c050"
   arch: amd64
-
 secret:
   name: "token"
   tokenKey: "TELE_TOKEN"
   tokenName: "kbot"
-
 dnsConfig:
   nameservers: 1.1.1.1
