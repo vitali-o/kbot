@@ -3,8 +3,9 @@ name: KBOT-CICD
 on: push
 
 jobs:
-  name: ci
-  runs-on: ubuntu-latest
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
 
   steps:
     - name: Checkout
