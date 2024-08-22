@@ -4,9 +4,11 @@
 
 replicaCount: 1
 image:
-  repository: vitaliio
+  registry: "ghcr.io"
+  repository: "vitali-o"
   tag: "v1.0.7-452c050"
-  arch: amd64
+  os: "linux"
+  arch: "amd64"
 secret:
   name: "token"
   tokenKey: "TELE_TOKEN"
