@@ -3,7 +3,7 @@ VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HE
 TARGETOS?=linux
 TARGETARCH?=amd64
 #REGISTRY=europe-central2-docker.pkg.dev/awesome-beaker-422915-i6/k8s-k3s
-REGISTRY=vitaliio
+REGISTRY=ghcr.io/vitali-o
 
 format:
 	gofmt -s -w ./
