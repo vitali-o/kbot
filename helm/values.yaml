@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   registry: "ghcr.io"
   repository: "vitali-o"
-  tag: "v1.0.7-b270d31"
+  tag: "v1.0.7-851ab6c"
   os: "linux"
   arch: "amd64"
 secret:
