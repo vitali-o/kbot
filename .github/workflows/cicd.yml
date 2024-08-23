@@ -53,9 +53,9 @@ jobs:
           git commit -am "update to version $VERSION"
           git push
 
-          - name: Login to ArgoCD
-          run: |
-            argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
+      - name: Login to ArgoCD
+        run: |
+          argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
     
       - name: Check if ArgoCD Application exists
         id: check-app
