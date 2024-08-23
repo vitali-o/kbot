@@ -2,7 +2,7 @@
 * Prerequestions:
   * Create kubernetes secret with command:
   ```
-  kubectl create secret generic token --from-literal=TELE_TOKEN={{my_telegram_tokne}}
+  kubectl create secret generic kbot --from-literal=token={{my_telegram_tokne}}
   ```
 * Run helm install kbot CHART_URL where CHART_URL is link to helm package on release page of this repo.
 
