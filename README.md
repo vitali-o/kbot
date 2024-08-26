@@ -1,3 +1,16 @@
+![CICD](https://github.com/vitali-o/kbot/blob/develop/images/CICD.png?raw=true)
+
+
+##### To deploy with github actions:
+* Set GitHub Actions secrets:
+  * GHCRIO_USERNAME - your username from ghcr.io
+  * GHCRIO_TOKEN - your ghcr.io token
+  * ARGOCD_SERVER - ip ur url ArgoCD server, there app will be deployed
+  * ARGOCD_USERNAME - username from your ArgoCD
+  * ARGOCD_PASSWORD - password from your ArgoCD
+* Create secret for application:
+  * kubectl create secret generic kbot --from-literal=token={{my_telegram_token}}
+
 ##### To install kbot with helm:
 * Prerequestions:
   * Create kubernetes secret with command:
