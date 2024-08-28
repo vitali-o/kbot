@@ -5,11 +5,11 @@ pipeline {
         choice(name: 'ARCH', choices: ['386', 'arm', 'arm64', 'amd64'], description: 'Pick ARCH')
     }
     stages {
-        stage('CI') {
+        stage('test') {
             steps {
                 script {
-                    echo "Build for platform ${params.OS}"
-                    echo "Build for arch: ${params.ARCH}"
+                    echo "run test"
+                    echo "make test"
                 }
             }
         }
