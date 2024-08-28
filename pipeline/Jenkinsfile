@@ -14,10 +14,18 @@ pipeline {
             }
         }
         stage('build') {
-            steps {
+            steps { 
                 script {
                     echo "Build image"
                     sh "make TARGETOS=${params.OS}OS TARGETARCH=${params.ARCH} image"
+                }
+            }
+        }
+        stage('deploy image') {
+            steps { 
+                script {
+                    echo "Push image to dockerhub"
+                    sh "make push"
                 }
             }
         }
