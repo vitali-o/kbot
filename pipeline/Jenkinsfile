@@ -9,7 +9,15 @@ pipeline {
             steps {
                 script {
                     echo "run test"
-                    echo "make test"
+                    sh "make test"
+                }
+            }
+        }
+        stage('build') {
+            steps {
+                script {
+                    echo "Build image"
+                    sh "make TARGETOS=${params.OS}OS TARGETARCH=${params.ARCH} image"
                 }
             }
         }
