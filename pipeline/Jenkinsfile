@@ -17,7 +17,7 @@ pipeline {
             steps { 
                 script {
                     echo "Build image"
-                    sh "make TARGETOS=${params.OS}OS TARGETARCH=${params.ARCH} image"
+                    sh "make TARGETOS=${params.OS} TARGETARCH=${params.ARCH} image"
                 }
             }
         }
