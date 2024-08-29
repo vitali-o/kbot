@@ -2,8 +2,7 @@ APP=$(shell basename $(shell git remote get-url origin) .git)
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 TARGETOS?=linux
 TARGETARCH?=amd64
-#REGISTRY=europe-central2-docker.pkg.dev/awesome-beaker-422915-i6/k8s-k3s
-REGISTRY=vitaliio
+REGISTRY?=vitaliio
 
 format:
 	gofmt -s -w ./
