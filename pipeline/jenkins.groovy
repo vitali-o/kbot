@@ -43,7 +43,7 @@ pipeline {
                         sh "echo $DOCKER_TOKEN | docker login -u ${REGISTRY} --password-stdin"
                     }
                     echo "Push image to dockerhub"
-                    sh "make push"
+                    sh "make push TARGETARCH=${TARGETARCH}"
                 }
             }
         }
