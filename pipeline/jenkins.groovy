@@ -25,7 +25,7 @@ pipeline {
             steps { 
                 script {
                     echo "Push image to dockerhub"
-                    sh "make push"
+                    sh "docker images"
                 }
             }
         }
