@@ -4,8 +4,7 @@ pipeline {
     environment {
         // Define environment variables
         REGISTRY = "vitaliio"
-        DOCKER_CREDENTIALS_ID = "dockerhub-credentials"
-    }
+        DOCKER_TOKEN_CREDENTIALS_ID = 'dockerhub-token'
 
     parameters {
         choice(name: 'OS', choices: ['linux', 'android', 'windows'], description: 'Pick OS')
@@ -39,9 +38,9 @@ pipeline {
         stage('push to dockerhub') {
             steps {
                 script {
-                        // Log in to Docker Hub (or another Docker registry)
-                        withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIALS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                        sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin ${REGISTRY}"
+                    // Log in to Docker Hub (or another Docker registry) securely using an access token
+                    withCredentials([string(credentialsId: "${DOCKER_TOKEN_CREDENTIALS_ID}", variable: 'DOCKER_TOKEN')]) {
+                    sh "echo $DOCKER_TOKEN | docker login --username ${REGISTRY} --password-stdin"
                     }
                     echo "Push image to dockerhub"
                     sh "make push"
