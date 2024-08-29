@@ -5,7 +5,7 @@ pipeline {
         // Define environment variables
         REGISTRY = "vitaliio"
         DOCKER_TOKEN_CREDENTIALS_ID = 'dockerhub-token'
-
+    }
     parameters {
         choice(name: 'OS', choices: ['linux', 'android', 'windows'], description: 'Pick OS')
         choice(name: 'ARCH', choices: ['386', 'arm', 'arm64', 'amd64'], description: 'Pick ARCH')
