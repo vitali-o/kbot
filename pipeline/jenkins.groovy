@@ -40,7 +40,7 @@ pipeline {
                 script {
                     // Log in to Docker Hub (or another Docker registry) securely using an access token
                     withCredentials([string(credentialsId: "${DOCKER_TOKEN_CREDENTIALS_ID}", variable: 'DOCKER_TOKEN')]) {
-                    sh "echo $DOCKER_TOKEN | docker login --username ${REGISTRY} --password-stdin"
+                    sh "echo $DOCKER_TOKEN | docker login -u ${REGISTRY} --password-stdin"
                     }
                     echo "Push image to dockerhub"
                     sh "make push"
