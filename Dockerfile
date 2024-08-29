@@ -7,7 +7,7 @@ COPY . .
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
 
-# Pass the arguments as environment variables to be used in the make command
+# Pass the arguments as environment variables to be used in the make command.
 ENV TARGETOS=${TARGETOS}
 ENV TARGETARCH=${TARGETARCH}
 
